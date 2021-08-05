@@ -8,12 +8,14 @@ public class MyFirstProgram {
 		hello("user");
 
 
-		Square s = new Square(5);
-
+		Square s = new Square();
+		s.l = 5;
 		System.out.println("Площадь квадрата со стороной " + s.l + " = " + area(s));
 
 
-		Rectangle r = new Rectangle(4,6);
+		Rectangle r = new Rectangle();
+		r.a = 4;
+		r.b = 6;
 		System.out.println("Площадь прямоугольника со сторонами " + r.a + " и "+ r.b + " = " + area(r));
 		System.out.println("Разница между площадью квадрата со стороной "+ s.l +" и площадью прямоугольника со сторонами "+ r.a + " и " + r.b+ " = "+(area(s)-area(r)));
 
