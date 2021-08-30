@@ -15,7 +15,5 @@ dependencies {
 test {
     useTestNG()
 //    useJUnit()
-    System.setProperty("webdriver.gecko.driver", 'C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers');
-
-
+//    System.setProperty("webdriver.gecko.driver", 'C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers');
 }

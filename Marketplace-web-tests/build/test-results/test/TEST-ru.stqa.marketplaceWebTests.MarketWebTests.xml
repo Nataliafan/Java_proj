@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.marketplaceWebTests.MarketWebTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-10T19:03:59" hostname="NATALIA-NOTE" time="51.373">
+<testsuite name="ru.stqa.marketplaceWebTests.MarketWebTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-30T15:22:16" hostname="NATALIA-NOTE" time="15.082">
   <properties/>
-  <testcase name="testUntitledTestCase" classname="ru.stqa.marketplaceWebTests.MarketWebTests" time="51.373"/>
+  <testcase name="testMarketWebTests" classname="ru.stqa.marketplaceWebTests.MarketWebTests" time="15.082"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1628622229333	geckodriver	INFO	Listening on 127.0.0.1:1088
-1628622230044	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\Natalia\\AppData\\Local\\Temp\\rust_mozprofiledEwBI5"
-JavaScript error: resource://gre/modules/XULStore.jsm, line 66: Error: Can't find profile directory.
-1628622239252	Marionette	INFO	Listening on port 59770
-1628622239417	Marionette	WARN	TLS certificate errors will be ignored for this session
-авг. 10, 2021 10:03:59 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+  <system-err><![CDATA[Starting ChromeDriver 92.0.4515.107 (87a818b10553a07434ea9e2b6dccf3cbe7895134-refs/branch-heads/4515@{#1634}) on port 28695
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+авг. 30, 2021 6:22:16 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-JavaScript error: https://yastatic.net/market-skubi/_/browser.vendor.6fa2463.js, line 1: ReducerCollisionError: There are two different reducers for "visibleSearchResult"
-1628622290684	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
-TimedPromise/<@chrome://marionette/content/sync.js:245:13
-TimedPromise@chrome://marionette/content/sync.js:230:10
-interaction.flushEventLoop@chrome://marionette/content/interaction.js:416:10
-webdriverClickElement@chrome://marionette/content/interaction.js:182:31
 ]]></system-err>
 </testsuite>

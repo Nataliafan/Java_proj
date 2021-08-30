@@ -2,6 +2,8 @@ package ru.stqa.marketplaceWebTests;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
@@ -16,20 +18,21 @@ public class MarketWebTests {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    System.setProperty("webdriver.gecko.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\geckodriver.exe");
-    driver = new FirefoxDriver();
+    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
+    driver = new ChromeDriver();
     baseUrl = "https://market.yandex.ru/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   }
 
   @Test
-  public void testUntitledTestCase() throws Exception {
+  public void testMarketWebTests() throws Exception {
     driver.get("https://market.yandex.ru/");
     driver.findElement(By.id("header-search")).clear();
-    driver.findElement(By.id("header-search")).sendKeys("Р·РµСЂРєР°Р»Рѕ");
+    driver.findElement(By.id("header-search")).sendKeys("зеркало");
     final String searchString = driver.findElement(By.id("header-search")).getText();
     driver.findElement(By.cssSelector(".BDkvP")).submit();
-    driver.findElement(By.xpath("//button[@data-autotest-id = 'dprice']")).click();
+    //driver.findElement(By.xpath("//button[@data-autotest-id = 'dprice']")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) ='по цене'])")).click();
   }
 
   @AfterClass(alwaysRun = true)
