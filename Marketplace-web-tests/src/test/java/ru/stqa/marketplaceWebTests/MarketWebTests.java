@@ -21,22 +21,26 @@ public class MarketWebTests {
     System.setProperty("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
     driver = new ChromeDriver();
     baseUrl = "https://market.yandex.ru/";
-    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+    driver.get("https://market.yandex.ru/");
+    driver.findElement(By.xpath("//input[@class = 'CheckboxCaptcha-Button']")).click();
+    driver.findElement(By.id("header-search")).clear();
   }
 
   @Test
-  public void testMarketWebTests() throws Exception {
-    driver.get("https://market.yandex.ru/");
-    driver.findElement(By.id("header-search")).clear();
+  public void testMarketWeb() throws Exception {
+
     driver.findElement(By.id("header-search")).sendKeys("зеркало");
     final String searchString = driver.findElement(By.id("header-search")).getText();
     driver.findElement(By.cssSelector(".BDkvP")).submit();
-    //driver.findElement(By.xpath("//button[@data-autotest-id = 'dprice']")).click();
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) ='по цене'])")).click();
+    driver.findElement(By.xpath("//button[@data-autotest-id = 'dprice']")).click();
+    //driver.findElement(By.xpath("(.//*[normalize-space(text()) ='по цене'])")).click();
+    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
   }
 
   @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception {
+
     driver.quit();
     String verificationErrorString = verificationErrors.toString();
     if (!"".equals(verificationErrorString)) {
