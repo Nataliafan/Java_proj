@@ -1,14 +1,11 @@
 package ru.stqa.marketplaceWebTests;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class MarketWebTests {
   private WebDriver driver;
@@ -22,20 +19,52 @@ public class MarketWebTests {
     driver = new ChromeDriver();
     baseUrl = "https://market.yandex.ru/";
     driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-    driver.get("https://market.yandex.ru/");
-    driver.findElement(By.xpath("//input[@class = 'CheckboxCaptcha-Button']")).click();
-    driver.findElement(By.id("header-search")).clear();
+    goToPage(baseUrl); //("https://market.yandex.ru/");
+    passByCaptcha("//input[@class = 'CheckboxCaptcha-Button']");
+    clearField("header-search");
+  }
+
+  private void clearField(String id) {
+    driver.findElement(By.id(id)).clear();
+  }
+  private void passByCaptcha(String xpathExpression) {
+    driver.findElement(By.xpath(xpathExpression)).click();
+  }
+  private void goToPage(String url) {
+    driver.get(url);
   }
 
   @Test
   public void testMarketWeb() throws Exception {
 
-    driver.findElement(By.id("header-search")).sendKeys("зеркало");
-    final String searchString = driver.findElement(By.id("header-search")).getText();
-    driver.findElement(By.cssSelector(".BDkvP")).submit();
-    driver.findElement(By.xpath("//button[@data-autotest-id = 'dprice']")).click();
+    fillInField("header-search", "зеркало");
+    pressButton(".BDkvP");
+    String sortingValue = saveValue("//button[@data-autotest-id", "'dprice'");
+    sortByValue("//button[@data-autotest-id", "'dprice'");
     //driver.findElement(By.xpath("(.//*[normalize-space(text()) ='по цене'])")).click();
+    printSortingValue(sortingValue);
     driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+  }
+
+  private void printSortingValue(String sortingValue) {
+    System.out.println(sortingValue);
+  }
+
+  private void sortByValue(String buttonClass, String buttonId) {
+    driver.findElement(By.xpath(buttonClass + " = " + buttonId + "]")).click();
+  }
+
+  private String saveValue(String buttonClass, String buttonId) {
+    String savedValue = driver.findElement(By.xpath(buttonClass + " = " + buttonId + "]")).getText();
+    return savedValue;
+  }
+
+  private void pressButton(String buttonId) {
+    driver.findElement(By.cssSelector(buttonId)).submit();
+  }
+
+  private void fillInField(String fieldId, String value) {
+    driver.findElement(By.id(fieldId)).sendKeys(value);
   }
 
   @AfterClass(alwaysRun = true)
