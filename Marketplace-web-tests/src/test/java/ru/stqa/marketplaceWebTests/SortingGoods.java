@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class MarketWebTests extends TestBase{
+public class SortingGoods extends TestBase{
 
   @Test
-  public void testMarketWeb() throws Exception {
+  public void testSearchAndSort() throws Exception {
 
     search(new SearchParams("header-search", "зеркало", ".BDkvP"));
     sortByValueAndPrint("//button[@data-autotest-id = 'dprice']");
