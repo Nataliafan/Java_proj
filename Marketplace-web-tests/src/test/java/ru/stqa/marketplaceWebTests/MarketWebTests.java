@@ -1,14 +1,11 @@
 package ru.stqa.marketplaceWebTests;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
 
 public class MarketWebTests {
   private WebDriver driver;
@@ -18,13 +15,17 @@ public class MarketWebTests {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
+    getSetDriverProperty(new DriverProperties("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe"));
     driver = new ChromeDriver();
     baseUrl = "https://market.yandex.ru/";
     driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
     driver.get("https://market.yandex.ru/");
     driver.findElement(By.xpath("//input[@class = 'CheckboxCaptcha-Button']")).click();
     driver.findElement(By.id("header-search")).clear();
+  }
+
+  public String getSetDriverProperty(DriverProperties driverProperties) {
+    return System.setProperty(driverProperties.property(), driverProperties.path());
   }
 
   @Test
