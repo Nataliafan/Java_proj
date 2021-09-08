@@ -10,7 +10,7 @@ public class TestBase {
 
   @BeforeClass(alwaysRun = true)
   public void setUp() throws Exception {
-    app.driverSettings.setDriverProperty;
+    app.setProperty.getSetDriverProperty();
 //    app.driverSettings.setDriverProperty("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
   //  System.setProperty("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
     app.testBegin();
