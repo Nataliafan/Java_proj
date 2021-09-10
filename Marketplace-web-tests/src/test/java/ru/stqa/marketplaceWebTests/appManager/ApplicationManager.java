@@ -3,9 +3,7 @@ package ru.stqa.marketplaceWebTests.appManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.marketplaceWebTests.model.DriverProperties;
-
 import java.util.concurrent.TimeUnit;
-
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
@@ -16,18 +14,11 @@ public class ApplicationManager {
   public OpenPage openPage;
   public BrowserTimeouts browserTimeouts;
 
-
-
-
-//  public String baseUrl;
-
   public void testBegin() {
 
-    setDriverProperty.getSetDriverProperty(new DriverProperties("webdriver.chrome.driver",
+   setDriverProperty.getSetDriverProperty(new DriverProperties("webdriver.chrome.driver",
         "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe"));
-  //  System.setProperty("webdriver.chrome.driver","C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
    driver = new ChromeDriver();
-
    alerts = new Alerts(driver);
    browserTimeouts = new BrowserTimeouts(driver);
    openPage = new OpenPage(driver);
@@ -36,7 +27,6 @@ public class ApplicationManager {
    openPage.goToPage("https://market.yandex.ru/");
    openPage.passByCaptcha("//input[@class = 'CheckboxCaptcha-Button']");
    openPage.clearField("header-search");
-
  }
   public void stop() {
     driver.quit();
@@ -45,8 +35,6 @@ public class ApplicationManager {
       fail(verificationErrorString);
     }
   }
-
-
   public SetDriverProperty getSetDriverProperty() {
     return setDriverProperty;
   }
@@ -62,6 +50,4 @@ public class ApplicationManager {
   public Alerts getAlerts() {
     return alerts;
   }
-
-
 }
