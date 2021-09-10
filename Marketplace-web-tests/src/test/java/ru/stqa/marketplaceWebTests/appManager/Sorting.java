@@ -7,6 +7,7 @@ import ru.stqa.marketplaceWebTests.model.SearchParams;
 public class Sorting {
   private WebDriver driver;
   public Sorting(WebDriver driver) {
+
     this.driver=driver;
   }
 
