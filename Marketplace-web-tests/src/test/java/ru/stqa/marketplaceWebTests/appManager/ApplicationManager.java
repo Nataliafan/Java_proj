@@ -9,10 +9,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
-  public SetDriverProperty setDriverProperty;
-
-
-
+  private final SetDriverProperty setDriverProperty = new SetDriverProperty();
   public WebDriver driver;
   public Alerts alerts;
   public Sorting sorting;
@@ -25,10 +22,10 @@ public class ApplicationManager {
 //  public String baseUrl;
 
   public void testBegin() {
- //   setDriverProperty = new SetDriverProperty();
- //   setDriverProperty.getSetDriverProperty(new DriverProperties("webdriver.chrome.driver", "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe"));
-    System.setProperty("webdriver.chrome.driver",
-        "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
+
+    setDriverProperty.getSetDriverProperty(new DriverProperties("webdriver.chrome.driver",
+        "C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe"));
+  //  System.setProperty("webdriver.chrome.driver","C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers\\chromedriver.exe");
    driver = new ChromeDriver();
 
    alerts = new Alerts(driver);
