@@ -35,19 +35,7 @@ public class ApplicationManager {
       fail(verificationErrorString);
     }
   }
-  public SetDriverProperty getSetDriverProperty() {
-    return setDriverProperty;
-  }
-  public BrowserTimeouts getBrowserTimeouts() {
-    return browserTimeouts;
-  }
-  public OpenPage getOpenPage() {
-    return openPage;
-  }
-  public Sorting getSorting() {
+    public Sorting getSorting() {
     return sorting;
-  }
-  public Alerts getAlerts() {
-    return alerts;
   }
 }
