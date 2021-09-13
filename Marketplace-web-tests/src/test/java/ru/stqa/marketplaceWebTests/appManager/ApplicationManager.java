@@ -3,16 +3,21 @@ package ru.stqa.marketplaceWebTests.appManager;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import ru.stqa.marketplaceWebTests.model.DriverProperties;
+
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.fail;
 
 public class ApplicationManager {
   private final SetDriverProperty setDriverProperty = new SetDriverProperty();
+  public ChangeFocus changeFocus;
   public WebDriver driver;
   public Alerts alerts;
   public Sorting sorting;
   public OpenPage openPage;
   public BrowserTimeouts browserTimeouts;
+  public ClickElement clickElement;
+  public PrintFieldName printFieldName;
 
   public void testBegin() {
 
@@ -23,6 +28,9 @@ public class ApplicationManager {
    browserTimeouts = new BrowserTimeouts(driver);
    openPage = new OpenPage(driver);
    sorting = new Sorting(driver);
+   clickElement = new ClickElement(driver);
+   changeFocus = new ChangeFocus(driver);
+   printFieldName = new PrintFieldName(driver);
    browserTimeouts.setBrowserTimeouts(120, TimeUnit.SECONDS);
    openPage.goToPage("https://market.yandex.ru/");
    openPage.passByCaptcha("//input[@class = 'CheckboxCaptcha-Button']");
@@ -38,4 +46,6 @@ public class ApplicationManager {
     public Sorting getSorting() {
     return sorting;
   }
+    public ClickElement getClickElement(){return clickElement;}
+    public ChangeFocus getChangeFocus() {return changeFocus;}
 }
