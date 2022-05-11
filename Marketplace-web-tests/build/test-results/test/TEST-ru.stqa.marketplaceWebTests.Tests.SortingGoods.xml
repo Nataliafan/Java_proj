@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.marketplaceWebTests.Tests.SortingGoods" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-11T17:03:56" hostname="NATALIA-NOTE" time="22.968">
+  <properties/>
+  <testcase name="testSearchAndSort" classname="ru.stqa.marketplaceWebTests.Tests.SortingGoods" time="22.968"/>
+  <system-out><![CDATA[по цене
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 97.0.4692.71 (adefa7837d02a07a604c1e6eff0b3a09422ab88d-refs/branch-heads/4692@{#1247}) on port 57367
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+мая 11, 2022 8:03:17 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+мая 11, 2022 8:03:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 97, so returning the closest version found: 96
+мая 11, 2022 8:03:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+INFO: Found CDP implementation for version 97 of 96
+]]></system-err>
+</testsuite>

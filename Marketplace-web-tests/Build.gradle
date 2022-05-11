@@ -6,10 +6,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.testng:testng:7.4.0'
-    implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    implementation 'org.openqa.selenium:selenium-rc:1.0-20081010.060147'
+    implementation 'org.testng:testng:7.5'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.1.1'
+ //   implementation 'org.seleniumhq.selenium:selenium-devtools:4.1.1'
+    implementation 'org.seleniumhq.selenium:selenium-devtools-v96:4.1.1'
+//    implementation 'org.openqa.selenium:selenium-rc:1.0-20081010.060147'
     implementation 'junit:junit:4.13.2'
+    implementation 'org.slf4j:slf4j-nop:1.7.33'
 }
 
 test {
@@ -17,3 +20,4 @@ test {
 //    useJUnit()
 //    System.setProperty("webdriver.gecko.driver", 'C:\\Users\\Natalia\\Documents\\GitHub\\Repositories\\Java_proj\\Marketplace-web-tests\\drivers');
 }
+

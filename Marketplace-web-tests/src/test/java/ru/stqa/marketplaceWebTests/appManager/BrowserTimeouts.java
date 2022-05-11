@@ -1,7 +1,9 @@
 package ru.stqa.marketplaceWebTests.appManager;
 
 import org.openqa.selenium.WebDriver;
-import java.util.concurrent.TimeUnit;
+
+import java.time.Duration;
+
 
 public class BrowserTimeouts {
   private WebDriver driver;
@@ -9,7 +11,8 @@ public class BrowserTimeouts {
 
     this.driver=driver;
   }
-  public void setBrowserTimeouts(int time, TimeUnit timeUnit) {
-    driver.manage().timeouts().implicitlyWait(time, timeUnit);
+  public void setBrowserTimeouts(int time) {
+//    driver.manage().timeouts().implicitlyWait(time, timeUnit);
+    WebDriver.Timeouts implicitlyWait = driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
   }
 }

@@ -8,9 +8,9 @@ public class SortingGoods extends TestBase{
 
   @Test
   public void testSearchAndSort() throws Exception {
-    app.getSorting().search(new SearchParams("header-search", "зеркало", ".BDkvP"));
+    app.getSorting().search(new SearchParams("header-search", "Смартфоны", ".BDkvP"));
     app.getSorting().sortByValueAndPrint("//button[@data-autotest-id = 'dprice']");
-    app.browserTimeouts.setBrowserTimeouts(60,TimeUnit.SECONDS);
+
   }
 
 
